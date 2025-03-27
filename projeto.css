@@ -22,11 +22,42 @@ body {
 /* Container principal */
 .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     padding: 30px;
+    height: 100vh;
+    justify-content: space-between;
 }
 
-/* Estilo para o menu de disciplinas */
+/* Área de conteúdo (corpo) com a frase de instrução */
+section#conteudo {
+    background-color: var(--cor-lilas);
+    color: var(--cor-branco);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+
+/* Título na área de conteúdo */
+section#conteudo h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Estilo para o menu de disciplinas com borda */
+.menu-disciplinas {
+    border: 2px solid var(--cor-lilas);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--cor-branco);
+    width: 100%;
+    max-width: 800px;
+}
+
 .menu-disciplinas ul {
     list-style-type: none;
     padding: 0;
@@ -51,6 +82,11 @@ body {
 }
 
 /* Estilo para o menu de conteúdos principais */
+.menu-conteudos {
+    width: 100%;
+    max-width: 800px;
+}
+
 .menu-conteudos ul {
     list-style-type: none;
     padding: 0;
@@ -63,37 +99,14 @@ body {
 .menu-conteudos a {
     text-decoration: none;
     color: var(--cor-preto);
-    font-size: 18px; /* Tamanho um pouco menor */
+    font-size: 18px;
     font-weight: normal;
-}
-
-/* Corpo do conteúdo */
-section#conteudo {
-    flex: 1;
-    margin-left: 30px;
-    background-color: var(--cor-lilas);
-    color: var(--cor-branco);
-    padding: 40px;
-    border-radius: 10px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-/* Título na área de conteúdo */
-section#conteudo h1 {
-    font-size: 30px;
-    font-weight: bold;
-    margin: 0;
 }
 
 /* Responsividade: Ajusta os menus em telas pequenas */
 @media screen and (max-width: 768px) {
     .container {
-        flex-direction: column;
-        align-items: center;
+        padding: 20px;
     }
 
     .menu-disciplinas, .menu-conteudos {
@@ -105,3 +118,4 @@ section#conteudo h1 {
         margin-left: 0;
     }
 }
+

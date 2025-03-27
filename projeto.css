@@ -12,9 +12,9 @@
     box-sizing: border-box;
 }
 
-/* Corpo da página */
+/* Fonte personalizada */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
     background-color: var(--cor-branco);
     color: var(--cor-preto);
 }
@@ -23,7 +23,7 @@ body {
 .container {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 30px;
 }
 
 /* Estilo para o menu de disciplinas */
@@ -33,13 +33,14 @@ body {
 }
 
 .menu-disciplinas li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .menu-disciplinas a {
     text-decoration: none;
     color: var(--cor-preto);
-    font-size: 18px;
+    font-size: 22px; /* Aumentei o tamanho das matérias */
+    font-weight: bold;
     transition: all 0.3s ease;
 }
 
@@ -62,7 +63,8 @@ body {
 .menu-conteudos a {
     text-decoration: none;
     color: var(--cor-preto);
-    font-size: 16px;
+    font-size: 18px; /* Tamanho um pouco menor */
+    font-weight: normal;
 }
 
 /* Corpo do conteúdo */
@@ -71,9 +73,20 @@ section#conteudo {
     margin-left: 30px;
     background-color: var(--cor-lilas);
     color: var(--cor-branco);
-    padding: 20px;
+    padding: 40px;
     border-radius: 10px;
     height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Título na área de conteúdo */
+section#conteudo h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
 }
 
 /* Responsividade: Ajusta os menus em telas pequenas */

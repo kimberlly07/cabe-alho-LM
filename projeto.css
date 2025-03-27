@@ -1,63 +1,94 @@
-/* Estilos gerais */
+/* Definir as cores principais */
+:root {
+    --cor-preto: #000;
+    --cor-branco: #fff;
+    --cor-lilas: #9b4dca;
+}
+
+/* Resetando margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    background-color: var(--cor-branco);
+    color: var(--cor-preto);
 }
 
-header {
+/* Container principal */
+.container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 10px;
-    color: white;
+    padding: 20px;
 }
 
-header .logo img {
-    height: 50px;
-}
-
-header .search input {
-    padding: 5px;
-    font-size: 14px;
-    border-radius: 5px;
-    border: none;
-}
-
-nav ul, .conteudos-menu ul {
-    list-style: none;
-    margin: 0;
+/* Estilo para o menu de disciplinas */
+.menu-disciplinas ul {
+    list-style-type: none;
     padding: 0;
-    display: flex;
 }
 
-nav ul li, .conteudos-menu ul li {
-    margin: 10px;
+.menu-disciplinas li {
+    margin-bottom: 10px;
 }
 
-nav ul li a, .conteudos-menu ul li a {
+.menu-disciplinas a {
     text-decoration: none;
-    color: #333;
-    padding: 10px;
+    color: var(--cor-preto);
     font-size: 18px;
-    display: block;
+    transition: all 0.3s ease;
 }
 
-nav ul li a:hover, .conteudos-menu ul li a:hover {
+/* Animação de sublinhado no menu de disciplinas */
+.menu-disciplinas a:hover {
     text-decoration: underline;
-    color: #007BFF;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
+    color: var(--cor-lilas);
 }
 
-/* Menu de disciplinas */
-.disciplinas-menu {
-    background-color: #f4f4f4;
-    padding: 10px;
+/* Estilo para o menu de conteúdos principais */
+.menu-conteudos ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-/* Menu de conteúdos */
-.conteudos-menu {
-    background-color: #e2e2e2;
-    padding: 10px;
+.menu-conteudos li {
+    margin-bottom: 10px;
+}
+
+.menu-conteudos a {
+    text-decoration: none;
+    color: var(--cor-preto);
+    font-size: 16px;
+}
+
+/* Corpo do conteúdo */
+section#conteudo {
+    flex: 1;
+    margin-left: 30px;
+    background-color: var(--cor-lilas);
+    color: var(--cor-branco);
+    padding: 20px;
+    border-radius: 10px;
+    height: 200px;
+}
+
+/* Responsividade: Ajusta os menus em telas pequenas */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-disciplinas, .menu-conteudos {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    section#conteudo {
+        margin-left: 0;
+    }
 }

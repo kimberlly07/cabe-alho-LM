@@ -11,25 +11,54 @@
         <!-- Área de conteúdo (corpo) com a frase de instrução -->
         <section id="conteudo">
             <h1>Escolha uma disciplina e um conteúdo!</h1>
+            <div id="descricao-conteudo">
+                <p>Selecione uma disciplina e um conteúdo para saber mais.</p>
+            </div>
         </section>
 
         <!-- Menu de disciplinas com borda em volta -->
         <nav class="menu-disciplinas">
             <ul>
-                <li><a href="#matematica">Matemática</a></li>
-                <li><a href="#portugues">Português</a></li>
-                <li><a href="#quimica">Química</a></li>
+                <li><a href="#" onclick="mostrarConteudo('matematica')">Matemática</a></li>
+                <li><a href="#" onclick="mostrarConteudo('portugues')">Português</a></li>
+                <li><a href="#" onclick="mostrarConteudo('quimica')">Química</a></li>
             </ul>
         </nav>
 
         <!-- Menu de conteúdos principais da disciplina selecionada -->
         <nav class="menu-conteudos">
             <ul>
-                <li><a href="#Matemática é a área do conhecimento que envolve o estudo da aritmética, álgebra, geometria, trigonometria, estatística e cálculo, em busca da sistematização de quantidades, medidas, espaços, estruturas e variações.">Conteúdo 1</a></li>
-                <li><a href="#conteudo2">Conteúdo 2</a></li>
-                <li><a href="#A Química é o ramo da ciência que estuda a matéria e suas transformações, analisando as propriedades, a composição e as variações energéticas durante as reações químicas.">Conteúdo 3</a></li>
+                <li><a href="#" onclick="mostrarDescricao('conteudo1')">Conteúdo 1</a></li>
+                <li><a href="#" onclick="mostrarDescricao('conteudo2')">Conteúdo 2</a></li>
+                <li><a href="#" onclick="mostrarDescricao('conteudo3')">Conteúdo 3</a></li>
             </ul>
         </nav>
     </div>
+
+    <script>
+        // Função para mostrar o conteúdo baseado na disciplina selecionada
+        function mostrarConteudo(disciplina) {
+            const descricaoConteudo = document.getElementById('descricao-conteudo');
+            if (disciplina === 'matematica') {
+                descricaoConteudo.innerHTML = '<h2>Matemática</h2><p>Estude temas como álgebra, geometria, cálculo e muito mais. Matemática é fundamental para diversas áreas do conhecimento.</p>';
+            } else if (disciplina === 'portugues') {
+                descricaoConteudo.innerHTML = '<h2>Português</h2><p>Aprenda sobre gramática, literatura, interpretação de texto e ortografia. Fundamental para o domínio da língua portuguesa.</p>';
+            } else if (disciplina === 'quimica') {
+                descricaoConteudo.innerHTML = '<h2>Química</h2><p>Explore os conceitos de substâncias, reações químicas, átomos e moléculas. Uma disciplina essencial para o entendimento da matéria.</p>';
+            }
+        }
+
+        // Função para mostrar a descrição do conteúdo selecionado
+        function mostrarDescricao(conteudo) {
+            const descricaoConteudo = document.getElementById('descricao-conteudo');
+            if (conteudo === 'conteudo1') {
+                descricaoConteudo.innerHTML += '<p><strong>Conteúdo 1:</strong> Este é o primeiro conteúdo da disciplina escolhida, com foco em introdução aos temas principais.</p>';
+            } else if (conteudo === 'conteudo2') {
+                descricaoConteudo.innerHTML += '<p><strong>Conteúdo 2:</strong> Este conteúdo se aprofunda mais nos detalhes e exemplos práticos da matéria.</p>';
+            } else if (conteudo === 'conteudo3') {
+                descricaoConteudo.innerHTML += '<p><strong>Conteúdo 3:</strong> Este conteúdo explora questões avançadas e aplicações da matéria no mundo real.</p>';
+            }
+        }
+    </script>
 </body>
 </html>

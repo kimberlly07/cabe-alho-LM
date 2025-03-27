@@ -12,11 +12,16 @@
     box-sizing: border-box;
 }
 
-/* Fonte personalizada */
+/* Fonte personalizada para o corpo da página */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte para o corpo */
     background-color: var(--cor-branco);
     color: var(--cor-preto);
+}
+
+/* Fonte personalizada para as matérias (Baskerville) */
+.menu-disciplinas a {
+    font-family: 'Baskerville', serif; /* Fonte Baskerville */
 }
 
 /* Container principal */
@@ -26,7 +31,7 @@ body {
     align-items: center;
     padding: 30px;
     height: 100vh;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 /* Área de conteúdo (corpo) com a frase de instrução */
@@ -56,6 +61,7 @@ section#conteudo h1 {
     background-color: var(--cor-branco);
     width: 100%;
     max-width: 800px;
+    margin-bottom: 30px;
 }
 
 .menu-disciplinas ul {
@@ -118,4 +124,3 @@ section#conteudo h1 {
         margin-left: 0;
     }
 }
-

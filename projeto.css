@@ -1,4 +1,4 @@
-/* Resets e estilo básico */
+/* Reset e estilo básico */
 * {
     margin: 0;
     padding: 0;
@@ -12,16 +12,10 @@ body {
     margin: 0;
 }
 
-/* Estilo do header (logo e barra de pesquisa) */
+/* Estilo do header (barra de pesquisa) */
 header {
-    display: flex;
-    justify-content: space-between;
     padding: 10px 20px;
     background-color: #3b0a45; /* Roxo escuro */
-}
-
-.logo img {
-    height: 40px;
 }
 
 .search-bar input {
@@ -117,4 +111,13 @@ header {
     padding: 20px;
     background-color: #222;
     border-radius: 8px;
+}
+
+/* Estilo dos conteúdos das matérias */
+.matematica, .quimica, .portugues {
+    display: none;
+}
+
+.active-content {
+    display: block;
 }

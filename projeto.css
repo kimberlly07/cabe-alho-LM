@@ -1,126 +1,120 @@
-/* Definir as cores principais */
-:root {
-    --cor-preto: #000;
-    --cor-branco: #fff;
-    --cor-lilas: #9b4dca;
-}
-
-/* Resetando margens e paddings */
+/* Resets e estilo básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fonte personalizada para o corpo da página */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte para o corpo */
-    background-color: var(--cor-branco);
-    color: var(--cor-preto);
-}
-
-/* Fonte personalizada para as matérias (Baskerville) */
-.menu-disciplinas a {
-    font-family: 'Baskerville', serif; /* Fonte Baskerville */
-}
-
-/* Container principal */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    height: 100vh;
-    justify-content: flex-start;
-}
-
-/* Área de conteúdo (corpo) com a frase de instrução */
-section#conteudo {
-    background-color: var(--cor-lilas);
-    color: var(--cor-branco);
-    padding: 40px;
-    border-radius: 10px;
-    text-align: center;
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 30px;
-}
-
-/* Título na área de conteúdo */
-section#conteudo h1 {
-    font-size: 30px;
-    font-weight: bold;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
     margin: 0;
 }
 
-/* Estilo para o menu de disciplinas com borda */
-.menu-disciplinas {
-    border: 2px solid var(--cor-lilas);
-    padding: 20px;
-    border-radius: 10px;
-    background-color: var(--cor-branco);
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 30px;
+/* Estilo do header (logo e barra de pesquisa) */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #3b0a45; /* Roxo escuro */
 }
 
-.menu-disciplinas ul {
-    list-style-type: none;
-    padding: 0;
+.logo img {
+    height: 40px;
 }
 
-.menu-disciplinas li {
-    margin-bottom: 15px;
+.search-bar input {
+    padding: 5px;
+    border-radius: 4px;
+    border: none;
+    width: 200px;
 }
 
-.menu-disciplinas a {
+/* Estilo do menu de navegação */
+.main-nav {
+    background-color: #2c0935; /* Roxo escuro */
+    padding: 10px 20px;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
     text-decoration: none;
-    color: var(--cor-preto);
-    font-size: 22px; /* Aumentei o tamanho das matérias */
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-/* Animação de sublinhado no menu de disciplinas */
-.menu-disciplinas a:hover {
-    text-decoration: underline;
-    color: var(--cor-lilas);
-}
-
-/* Estilo para o menu de conteúdos principais */
-.menu-conteudos {
-    width: 100%;
-    max-width: 800px;
-}
-
-.menu-conteudos ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.menu-conteudos li {
-    margin-bottom: 10px;
-}
-
-.menu-conteudos a {
-    text-decoration: none;
-    color: var(--cor-preto);
+    color: #fff;
     font-size: 18px;
-    font-weight: normal;
+    font-weight: normal; /* Sem negrito */
+    transition: text-decoration 0.3s ease;
 }
 
-/* Responsividade: Ajusta os menus em telas pequenas */
-@media screen and (max-width: 768px) {
-    .container {
-        padding: 20px;
+.nav-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade: Menu Hamburger */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
     }
 
-    .menu-disciplinas, .menu-conteudos {
-        width: 100%;
-        margin-bottom: 20px;
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
     }
 
-    section#conteudo {
-        margin-left: 0;
+    .nav-links.active {
+        display: flex;
     }
+
+    .nav-links li a {
+        font-size: 22px;
+    }
+}
+
+/* Estilo do conteúdo */
+.content {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #3b0a45;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.sidebar li a:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 8px;
 }

@@ -1,64 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto de Disciplinas</title>
+    <title>Portal de Disciplinas</title>
     <link rel="stylesheet" href="projeto.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Área de conteúdo (corpo) com a frase de instrução -->
-        <section id="conteudo">
-            <h1>Escolha uma disciplina e um conteúdo!</h1>
-            <div id="descricao-conteudo">
-                <p>Selecione uma disciplina e um conteúdo para saber mais.</p>
-            </div>
-        </section>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+        </div>
+    </header>
 
-        <!-- Menu de disciplinas com borda em volta -->
-        <nav class="menu-disciplinas">
-            <ul>
-                <li><a href="#" onclick="mostrarConteudo('matematica')">Matemática</a></li>
-                <li><a href="#" onclick="mostrarConteudo('portugues')">Português</a></li>
-                <li><a href="#" onclick="mostrarConteudo('quimica')">Química</a></li>
-            </ul>
-        </nav>
+    <nav class="main-nav">
+        <div class="hamburger-menu" id="hamburger-menu">
+            <span>☰</span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="matematica.html">Matemática</a></li>
+            <li><a href="quimica.html">Química</a></li>
+            <li><a href="portugues.html">Português</a></li>
+        </ul>
+    </nav>
 
-        <!-- Menu de conteúdos principais da disciplina selecionada -->
-        <nav class="menu-conteudos">
+    <div class="content">
+        <div class="sidebar">
             <ul>
-                <li><a href="#" onclick="mostrarDescricao('conteudo1')">Conteúdo 1</a></li>
-                <li><a href="#" onclick="mostrarDescricao('conteudo2')">Conteúdo 2</a></li>
-                <li><a href="#" onclick="mostrarDescricao('conteudo3')">Conteúdo 3</a></li>
+                <li><a href="#">Conteúdo 1</a></li>
+                <li><a href="#">Conteúdo 2</a></li>
+                <li><a href="#">Conteúdo 3</a></li>
             </ul>
-        </nav>
+        </div>
+        <div class="main-content">
+            <h1>Bem-vindo ao Portal de Disciplinas!</h1>
+            <p>Escolha uma disciplina para começar.</p>
+        </div>
     </div>
 
-    <script>
-        // Função para mostrar o conteúdo baseado na disciplina selecionada
-        function mostrarConteudo(disciplina) {
-            const descricaoConteudo = document.getElementById('descricao-conteudo');
-            if (disciplina === 'matematica') {
-                descricaoConteudo.innerHTML = '<h2>Matemática</h2><p>Estude temas como álgebra, geometria, cálculo e muito mais. Matemática é fundamental para diversas áreas do conhecimento.</p>';
-            } else if (disciplina === 'portugues') {
-                descricaoConteudo.innerHTML = '<h2>Português</h2><p>Aprenda sobre gramática, literatura, interpretação de texto e ortografia. Fundamental para o domínio da língua portuguesa.</p>';
-            } else if (disciplina === 'quimica') {
-                descricaoConteudo.innerHTML = '<h2>Química</h2><p>Explore os conceitos de substâncias, reações químicas, átomos e moléculas. Uma disciplina essencial para o entendimento da matéria.</p>';
-            }
-        }
-
-        // Função para mostrar a descrição do conteúdo selecionado
-        function mostrarDescricao(conteudo) {
-            const descricaoConteudo = document.getElementById('descricao-conteudo');
-            if (conteudo === 'conteudo1') {
-                descricaoConteudo.innerHTML += '<p><strong>Conteúdo 1:</strong> Este é o primeiro conteúdo da disciplina escolhida, com foco em introdução aos temas principais.</p>';
-            } else if (conteudo === 'conteudo2') {
-                descricaoConteudo.innerHTML += '<p><strong>Conteúdo 2:</strong> Este conteúdo se aprofunda mais nos detalhes e exemplos práticos da matéria.</p>';
-            } else if (conteudo === 'conteudo3') {
-                descricaoConteudo.innerHTML += '<p><strong>Conteúdo 3:</strong> Este conteúdo explora questões avançadas e aplicações da matéria no mundo real.</p>';
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
